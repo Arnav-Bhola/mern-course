@@ -11,6 +11,7 @@ const Users = () => {
 
   useEffect(() => {
     const fetchUsers = async () => {
+      console.log(process.env.REACT_APP_BACKEND_URL + "/users");
       try {
         const responseData = await sendRequest(process.env.REACT_APP_BACKEND_URL + "/users");
         setLoadedUsers(responseData.users);
